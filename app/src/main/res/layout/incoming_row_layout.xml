@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imgInDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/receipt_image" />
+
+        <TextView
+            android:id="@+id/lblSupplierName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@id/imgInDoc"
+            android:text="Stoned and Co"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblInDocId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@id/imgInDoc"
+            android:layout_below="@id/lblSupplierName"
+            android:text="#ASGf5678"
+            android:textSize="16dp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/lblInDate"
+            android:layout_width="128dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblInDocId"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="57dp"
+            android:layout_toEndOf="@id/imgInDoc"
+            android:inputType="date"
+            android:text="11/2/2021 12:04:34" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblInShortDes"
+            android:text="Short Description"
+            android:layout_below="@id/lblInDocId"
+            android:layout_toRightOf="@id/imgInDoc"
+            android:paddingLeft="10dp"/>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

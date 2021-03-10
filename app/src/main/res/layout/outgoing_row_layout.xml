@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/imgOutDoc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/receipt_image" />
+
+        <TextView
+            android:id="@+id/lblCustomerName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@id/imgOutDoc"
+            android:text="Stoned and Co"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/lblOutDocId"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_toEndOf="@id/imgOutDoc"
+            android:layout_below="@id/lblCustomerName"
+            android:text="#ASGf5678"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/lblOutDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblOutDocId"
+            android:layout_marginStart="155dp"
+            android:layout_marginTop="55dp"
+            android:layout_toEndOf="@id/imgOutDoc"
+            android:inputType="date"
+            android:text="11/2/2021" />
+
+        <TextView
+            android:id="@+id/lblOutTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblOutDocId"
+            android:paddingLeft="10dp"
+            android:layout_marginTop="55dp"
+            android:layout_toEndOf="@id/lblOutDate"
+            android:inputType="time"
+            android:text="11:29" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/lblOutShortDes"
+            android:text="Short Description"
+            android:layout_below="@id/lblOutDocId"
+            android:layout_toRightOf="@id/imgOutDoc"
+            android:paddingLeft="10dp"/>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

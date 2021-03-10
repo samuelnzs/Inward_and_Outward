@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Inward and Outward</string>
+    <string name="tab_text_1">Incoming</string>
+    <string name="tab_text_2">Outgoing</string>
+</resources>

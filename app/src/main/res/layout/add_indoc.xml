@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <TextView
+        android:id="@+id/txtSupplierName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Supplier Name"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/supplierName"
+        android:layout_width="201dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="50dp"
+        android:textSize="16sp"
+        android:inputType="text"
+        android:layout_toRightOf="@id/txtSupplierName" />
+
+    <TextView
+        android:id="@+id/txtInDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtSupplierName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:paddingTop="20dp"
+        android:text="Description"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/InDescription"
+        android:layout_width="201dp"
+        android:layout_height="52dp"
+        android:layout_below="@id/supplierName"
+        android:layout_marginLeft="74dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/txtInDescription"
+        android:inputType="text"
+        android:paddingLeft="30dp" />
+
+    <Button
+        android:id="@+id/btnInAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/InDescription"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="60dp"
+        android:text="Add"
+        app:backgroundTint="@color/black" />
+
+
+</RelativeLayout>
