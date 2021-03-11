@@ -9,10 +9,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inwardandoutward.InDocInfo
 import com.example.inwardandoutward.R
+import com.example.inwardandoutward.onInDocClickListener
 
 
-
-class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>) : RecyclerView.Adapter<IncomingAdapter.IncomingViewHolder>() {
+class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>, private val onInDocClickListener: onInDocClickListener) : RecyclerView.Adapter<IncomingAdapter.IncomingViewHolder>() {
 
     private var removedPosition: Int = 0
     private var removedItem: String = ""
@@ -50,6 +50,10 @@ class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>) : Recycle
         holder.textView2.text = currentOutList.InId
         holder.textView3.text = currentOutList.InDocDes
         holder.textView4.text = currentOutList.InDocDate
+
+        holder.itemView.setOnClickListener{
+            onInDocClickListener.onInDocItemClick(position)
+        }
         //holder.textView5.text = currentOutList.InDocTime
     }
 

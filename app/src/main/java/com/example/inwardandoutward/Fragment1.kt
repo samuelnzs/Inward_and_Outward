@@ -1,5 +1,6 @@
 package com.example.inwardandoutward
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -17,11 +18,11 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 
-class Fragment1 : Fragment() {
+class Fragment1 : Fragment() ,onInDocClickListener{
 
     lateinit var recycle : RecyclerView
     private  val  list = ArrayList<InDocInfo>()
-    private val adapter: IncomingAdapter = IncomingAdapter(list)
+    private val adapter: IncomingAdapter = IncomingAdapter(list,this)
     private val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd  HH:mm:ss")
     private val currentDateAndTime: String = simpleDateFormat.format(Date())
 
@@ -39,7 +40,7 @@ class Fragment1 : Fragment() {
        //Link RecyclerView
 
        recycle = view. findViewById(R.id.rcyIncomingDoc)
-       val adapter = IncomingAdapter(list)
+       val adapter = IncomingAdapter(list,this)
        recycle.layoutManager = LinearLayoutManager(activity)
        recycle.adapter = adapter
 
@@ -98,6 +99,12 @@ class Fragment1 : Fragment() {
         list.add(InDocInfo(R.drawable.receipt_image, "VANS","PA10010","Des1", currentDateAndTime))
         list.add(InDocInfo(R.drawable.receipt_image, "Jordan","PA10011","Des1", currentDateAndTime))
         adapter.notifyDataSetChanged()
+    }
+
+    override fun onInDocItemClick(position: Int) {
+        //val intent = Intent(this,IncomingProductActivity::class.java)
+        val intent = Intent(this.context, IncomingProductActivity::class.java)
+        startActivity(intent)
     }
 
 }

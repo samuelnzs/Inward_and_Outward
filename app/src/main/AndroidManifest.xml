@@ -9,6 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.InwardAndOutward">
+        <activity android:name=".IncomingProductActivity"
+            android:label="Incoming Product">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

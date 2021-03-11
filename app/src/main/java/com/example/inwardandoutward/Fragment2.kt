@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class Fragment2 : Fragment() {
+class Fragment2 : Fragment(){
 
     lateinit var recycle : RecyclerView
     private val list = ArrayList<OutDocInfo>()
@@ -101,4 +101,5 @@ class Fragment2 : Fragment() {
         list.add(OutDocInfo(R.drawable.receipt_image, "Jordan","PA10011","Des1",currentDateAndTime))
         adapter.notifyDataSetChanged()
     }
+
 }
