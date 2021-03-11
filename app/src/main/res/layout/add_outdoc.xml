@@ -19,12 +19,12 @@
 
     <EditText
         android:id="@+id/customerName"
-        android:layout_width="201dp"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:layout_marginStart="50dp"
-        android:textSize="16sp"
+        android:layout_marginStart="30dp"
+        android:layout_toRightOf="@id/txtCustomerName"
         android:inputType="text"
-        android:layout_toRightOf="@id/txtCustomerName" />
+        android:textSize="16sp" />
 
     <TextView
         android:id="@+id/txtOutDescription"
@@ -40,10 +40,10 @@
 
     <EditText
         android:id="@+id/OutDescription"
-        android:layout_width="201dp"
+        android:layout_width="match_parent"
         android:layout_height="52dp"
         android:layout_below="@id/customerName"
-        android:layout_marginLeft="74dp"
+        android:layout_marginLeft="65dp"
         android:layout_marginTop="2dp"
         android:layout_toRightOf="@id/txtOutDescription"
         android:inputType="text" />
