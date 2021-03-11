@@ -4,16 +4,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.inwardandoutward.recycler_view_adapter.OutgoingAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class Fragment2 : Fragment() {
 
     lateinit var recycle : RecyclerView
     private val list = ArrayList<OutDocInfo>()
     private val adapter: OutgoingAdapter = OutgoingAdapter(list)
+    private val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd  HH:mm:ss")
+    private val currentDateAndTime: String = simpleDateFormat.format(Date())
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +40,47 @@ class Fragment2 : Fragment() {
         val adapter = OutgoingAdapter(list)
         recycle.layoutManager = LinearLayoutManager(activity)
         recycle.adapter = adapter
+
+        val addButton: FloatingActionButton = view.findViewById<FloatingActionButton>(R.id.addOutDoc)
+
+        addButton.setOnClickListener{
+            val dialogView : View = LayoutInflater.from(context).inflate(R.layout.add_outdoc,null)
+            val builder : AlertDialog.Builder? =
+                    context?.let { it1 -> AlertDialog.Builder(it1).setView(dialogView).setTitle("Add Outgoing Document") }
+            val alert : AlertDialog = builder!!.show()
+
+            val addButton: Button =  dialogView.findViewById(R.id.btnOutAdd)
+            addButton.setOnClickListener{
+                alert.dismiss()
+                val custName = dialogView.findViewById<EditText>(R.id.customerName)
+                val desc = dialogView.findViewById<EditText>(R.id.OutDescription)
+
+                list.add(OutDocInfo(R.drawable.receipt_image, custName.text.toString(), list[list.size-1].OutId+1, desc.text.toString(),currentDateAndTime))
+
+
+            }
+        }
+
+        val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT){
+
+            override fun onMove(
+                    recyclerView: RecyclerView,
+                    viewHolder: RecyclerView.ViewHolder,
+                    target: RecyclerView.ViewHolder
+            ): Boolean{
+                return false
+            }
+
+            override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
+                if(direction== ItemTouchHelper.RIGHT){
+                    adapter.removeItem(viewHolder)
+                }
+            }
+        }
+
+        val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+        itemTouchHelper.attachToRecyclerView(recycle)
+
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,17 +88,17 @@ class Fragment2 : Fragment() {
 
 
 
-        list.add(OutDocInfo(R.drawable.receipt_image, "Stone n CO" , "PA1001","Des1","01/12/2021", "11:54"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "TNT","PA1002","Des1","2/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "VTMT","PA1003","Des1","03/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "SUPREME","PA1004","Des1","04/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "BAPE","PA1005","Des1","05/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "EMMANUAL","PA1006","Des1","06/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "NIKE","PA1007","Des1","07/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "ADIDAS","PA1008","Des1","08/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "PUMA","PA1009","Des1","09/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "VANS","PA10010","Des1","10/12/2021","11:50"))
-        list.add(OutDocInfo(R.drawable.receipt_image, "Jordan","PA10011","Des1","11/12/2021","11:50"))
+        list.add(OutDocInfo(R.drawable.receipt_image, "Stone n CO" , "PA1001","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "TNT","PA1002","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "VTMT","PA1003","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "SUPREME","PA1004","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "BAPE","PA1005","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "EMMANUAL","PA1006","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "NIKE","PA1007","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "ADIDAS","PA1008","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "PUMA","PA1009","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "VANS","PA10010","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.receipt_image, "Jordan","PA10011","Des1",currentDateAndTime))
         adapter.notifyDataSetChanged()
     }
 }

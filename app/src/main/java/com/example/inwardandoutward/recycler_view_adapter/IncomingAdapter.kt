@@ -16,7 +16,6 @@ class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>) : Recycle
 
     private var removedPosition: Int = 0
     private var removedItem: String = ""
-    private lateinit var dialog: Dialog
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncomingViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(

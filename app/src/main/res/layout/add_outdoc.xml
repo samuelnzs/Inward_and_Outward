@@ -8,29 +8,29 @@
     android:layout_gravity="center">
 
     <TextView
-        android:id="@+id/txtSupplierName"
+        android:id="@+id/txtCustomerName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
-        android:text="Supplier Name"
+        android:text="Customer Name"
         android:textSize="16sp"
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/supplierName"
+        android:id="@+id/customerName"
         android:layout_width="201dp"
         android:layout_height="52dp"
         android:layout_marginStart="50dp"
         android:textSize="16sp"
         android:inputType="text"
-        android:layout_toRightOf="@id/txtSupplierName" />
+        android:layout_toRightOf="@id/txtCustomerName" />
 
     <TextView
-        android:id="@+id/txtInDescription"
+        android:id="@+id/txtOutDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/txtSupplierName"
+        android:layout_below="@id/txtCustomerName"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"
         android:paddingTop="20dp"
@@ -39,20 +39,20 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/InDescription"
+        android:id="@+id/OutDescription"
         android:layout_width="201dp"
         android:layout_height="52dp"
-        android:layout_below="@id/supplierName"
+        android:layout_below="@id/customerName"
         android:layout_marginLeft="74dp"
         android:layout_marginTop="2dp"
-        android:layout_toRightOf="@id/txtInDescription"
+        android:layout_toRightOf="@id/txtOutDescription"
         android:inputType="text" />
 
     <Button
-        android:id="@+id/btnInAdd"
+        android:id="@+id/btnOutAdd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/InDescription"
+        android:layout_below="@id/OutDescription"
         android:layout_marginLeft="160dp"
         android:layout_marginTop="60dp"
         android:text="Add"

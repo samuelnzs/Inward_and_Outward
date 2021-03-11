@@ -6,4 +6,4 @@ data class OutDocInfo(
     val OutId:String,
     val OutDocDes:String,
     val OutDocDate: String,
-    val OutDocTime: String)
+    )

@@ -11,6 +11,9 @@ import com.example.inwardandoutward.R
 
 class OutgoingAdapter(private val outgoingList : ArrayList<OutDocInfo>) : RecyclerView.Adapter<OutgoingAdapter.OutgoingViewHolder>() {
 
+    private var removedPosition: Int = 0
+    private var removedItem: String = ""
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OutgoingViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.outgoing_row_layout,
@@ -21,13 +24,20 @@ class OutgoingAdapter(private val outgoingList : ArrayList<OutDocInfo>) : Recycl
 
     override fun getItemCount(): Int = outgoingList.size
 
+    fun removeItem(viewHolder: RecyclerView.ViewHolder){
+        removedPosition = viewHolder.adapterPosition
+        removedItem = outgoingList[removedPosition].toString()
+        outgoingList.removeAt(removedPosition)
+        notifyItemRemoved(removedPosition)
+    }
+
     class OutgoingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = itemView.findViewById(R.id.imgOutDoc)
         val textView1 : TextView = itemView.findViewById(R.id.lblCustomerName)
         val textView2 : TextView = itemView.findViewById(R.id.lblOutDocId)
         val textView3 : TextView = itemView.findViewById(R.id.lblOutShortDes)
         val textView4 : TextView = itemView.findViewById(R.id.lblOutDate)
-        val textView5 : TextView = itemView.findViewById(R.id.lblOutTime)
+        //val textView5 : TextView = itemView.findViewById(R.id.lblOutTime)
     }
 
 
@@ -40,7 +50,7 @@ class OutgoingAdapter(private val outgoingList : ArrayList<OutDocInfo>) : Recycl
         holder.textView2.text = currentOutList.OutId
         holder.textView3.text = currentOutList.OutDocDes
         holder.textView4.text = currentOutList.OutDocDate
-        holder.textView5.text = currentOutList.OutDocTime
+        //holder.textView5.text = currentOutList.OutDocTime
 
     }
 

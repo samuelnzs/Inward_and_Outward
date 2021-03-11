@@ -22,8 +22,8 @@ class Fragment1 : Fragment() {
     lateinit var recycle : RecyclerView
     private  val  list = ArrayList<InDocInfo>()
     private val adapter: IncomingAdapter = IncomingAdapter(list)
-    val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd  HH:mm:ss")
-    val currentDateAndTime: String = simpleDateFormat.format(Date())
+    private val simpleDateFormat = SimpleDateFormat("yyyy.MM.dd  HH:mm:ss")
+    private val currentDateAndTime: String = simpleDateFormat.format(Date())
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,

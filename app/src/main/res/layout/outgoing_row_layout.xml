@@ -43,22 +43,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lblOutDocId"
-            android:layout_marginStart="155dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginStart="130dp"
+            android:layout_marginTop="57dp"
             android:layout_toEndOf="@id/imgOutDoc"
             android:inputType="date"
-            android:text="11/2/2021" />
+            android:text="11/2/2021 11:29" />
 
-        <TextView
-            android:id="@+id/lblOutTime"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/lblOutDocId"
-            android:paddingLeft="10dp"
-            android:layout_marginTop="55dp"
-            android:layout_toEndOf="@id/lblOutDate"
-            android:inputType="time"
-            android:text="11:29" />
+
 
         <TextView
             android:layout_width="wrap_content"
