@@ -1,5 +1,6 @@
-package com.example.inwardandoutward.RecyclerViewAdapter
+package com.example.inwardandoutward.recycler_view_adapter
 
+import android.app.Dialog
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +14,10 @@ import com.example.inwardandoutward.R
 
 class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>) : RecyclerView.Adapter<IncomingAdapter.IncomingViewHolder>() {
 
+    private var removedPosition: Int = 0
+    private var removedItem: String = ""
+    private lateinit var dialog: Dialog
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): IncomingViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(
             R.layout.incoming_row_layout,
@@ -21,6 +26,13 @@ class IncomingAdapter(private val incomingList : ArrayList<InDocInfo>) : Recycle
         return IncomingViewHolder(itemView)
     }
     override fun getItemCount(): Int = incomingList.size
+
+    fun removeItem(viewHolder: RecyclerView.ViewHolder){
+        removedPosition = viewHolder.adapterPosition
+        removedItem = incomingList[removedPosition].toString()
+        incomingList.removeAt(removedPosition)
+        notifyItemRemoved(removedPosition)
+    }
 
     class IncomingViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val imageView: ImageView = itemView.findViewById(R.id.imgInDoc)

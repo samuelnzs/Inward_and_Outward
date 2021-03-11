@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.inwardandoutward.RecyclerViewAdapter.OutgoingAdapter
+import com.example.inwardandoutward.recycler_view_adapter.OutgoingAdapter
 
 class Fragment2 : Fragment() {
 

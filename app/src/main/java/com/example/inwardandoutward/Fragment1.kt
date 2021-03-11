@@ -8,9 +8,10 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.inwardandoutward.RecyclerViewAdapter.IncomingAdapter
+import com.example.inwardandoutward.recycler_view_adapter.IncomingAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import java.text.SimpleDateFormat
 import java.util.*
@@ -62,7 +63,7 @@ class Fragment1 : Fragment() {
            }
        }
 
-       /*val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT){
+       val itemTouchHelperCallback = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT){
 
            override fun onMove(
                    recyclerView: RecyclerView,
@@ -78,7 +79,7 @@ class Fragment1 : Fragment() {
                }
            }
 
-       }*/
+       }
    }
 
     override fun onCreate(savedInstanceState: Bundle?) {

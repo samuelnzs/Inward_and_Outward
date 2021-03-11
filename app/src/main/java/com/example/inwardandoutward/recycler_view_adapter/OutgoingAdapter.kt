@@ -1,4 +1,4 @@
-package com.example.inwardandoutward.RecyclerViewAdapter
+package com.example.inwardandoutward.recycler_view_adapter
 
 import android.view.LayoutInflater
 import android.view.View
