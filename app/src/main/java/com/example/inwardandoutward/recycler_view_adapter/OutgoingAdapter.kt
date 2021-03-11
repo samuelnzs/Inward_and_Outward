@@ -35,7 +35,6 @@ class OutgoingAdapter(private val outgoingList : ArrayList<OutDocInfo>) : Recycl
     override fun onBindViewHolder(holder: OutgoingViewHolder, position: Int) {
         val currentOutList = outgoingList[position]
 
-
         holder.imageView.setImageResource(currentOutList.imageResources)
         holder.textView1.text = currentOutList.CustName
         holder.textView2.text = currentOutList.OutId

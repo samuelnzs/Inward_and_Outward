@@ -78,8 +78,10 @@ class Fragment1 : Fragment() {
                    adapter.removeItem(viewHolder)
                }
            }
-
        }
+
+       val itemTouchHelper = ItemTouchHelper(itemTouchHelperCallback)
+       itemTouchHelper.attachToRecyclerView(recycle)
    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
