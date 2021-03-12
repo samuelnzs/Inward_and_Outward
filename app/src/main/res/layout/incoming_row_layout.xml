@@ -13,10 +13,10 @@
 
         <ImageView
             android:id="@+id/imgInDoc"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="107dp"
+            android:layout_height="102dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/receipt_image" />
+            app:srcCompat="@drawable/in_document" />
 
         <TextView
             android:id="@+id/lblSupplierName"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/lblInDocId"
             android:layout_marginStart="130dp"
-            android:layout_marginTop="57dp"
+            android:layout_marginTop="32dp"
             android:layout_toEndOf="@id/imgInDoc"
             android:inputType="date"
             android:text="11/2/2021 12:04:34" />

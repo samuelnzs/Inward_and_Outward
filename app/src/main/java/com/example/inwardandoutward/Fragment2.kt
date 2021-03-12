@@ -55,7 +55,7 @@ class Fragment2 : Fragment(){
                 val custName = dialogView.findViewById<EditText>(R.id.customerName)
                 val desc = dialogView.findViewById<EditText>(R.id.OutDescription)
 
-                list.add(OutDocInfo(R.drawable.receipt_image, custName.text.toString(), list[list.size-1].OutId+1, desc.text.toString(),currentDateAndTime))
+                list.add(OutDocInfo(R.drawable.out_document, custName.text.toString(), list[list.size-1].OutId+1, desc.text.toString(),currentDateAndTime))
 
 
             }
@@ -86,19 +86,17 @@ class Fragment2 : Fragment(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
-        list.add(OutDocInfo(R.drawable.receipt_image, "Stone n CO" , "PA1001","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "TNT","PA1002","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "VTMT","PA1003","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "SUPREME","PA1004","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "BAPE","PA1005","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "EMMANUAL","PA1006","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "NIKE","PA1007","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "ADIDAS","PA1008","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "PUMA","PA1009","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "VANS","PA10010","Des1",currentDateAndTime))
-        list.add(OutDocInfo(R.drawable.receipt_image, "Jordan","PA10011","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "Stone n CO" , "PA1001","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "TNT","PA1002","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "VTMT","PA1003","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "SUPREME","PA1004","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "BAPE","PA1005","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "EMMANUAL","PA1006","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "NIKE","PA1007","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "ADIDAS","PA1008","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "PUMA","PA1009","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "VANS","PA10010","Des1",currentDateAndTime))
+        list.add(OutDocInfo(R.drawable.out_document, "Jordan","PA10011","Des1",currentDateAndTime))
         adapter.notifyDataSetChanged()
     }
 
